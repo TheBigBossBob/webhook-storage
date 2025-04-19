@@ -32,6 +32,10 @@ def zaznam_otvorenia():
     print(f"📥 Používateľ '{meno}' otvoril script v {cas}")
     return jsonify({"ok": True}), 200
 
+@app.route("/zaznamy", methods=["GET"])
+def get_all_users():
+    return jsonify(load_db())
+
 @app.route("/")
 def index():
     return "Server beží"
